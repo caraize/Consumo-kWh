@@ -28,26 +28,26 @@ function calculaICMS(fornecimento){ //if fornecimento < 200 = * 0.136363 | else 
     
 }
 
-function calculaCOFINS(ICMScalc, fornecimento ){
+function calculaCOFINS(fornecimento ){
     if(fornecimento < 200){
-        COFINScalc = ICMScalc * 0.0614722
+        COFINScalc = fornecimento * 0.0614722
     }
     
     else {
-        COFINScalc = ICMScalc * 0.0730751
+        COFINScalc = fornecimento * 0.0730751
     }
     console.log(COFINScalc)
     calculaPIS(COFINScalc, fornecimento)
         
     }
 
-function calculaPIS(COFINScalc, fornecimento){
+function calculaPIS(fornecimento){
     if(fornecimento < 200){
-        PIScalc = COFINScalc * 0.013346
+        PIScalc = fornecimento * 0.013346
     }
         
     else {
-        PIScalc = COFINScalc * 0.0158651
+        PIScalc = fornecimento * 0.0158651
     }
         
     console.log(PIScalc);
@@ -55,11 +55,11 @@ function calculaPIS(COFINScalc, fornecimento){
             
     }
 
-    let ICMSCOFINScalc //declaração fora da função pq ta dando erro
+let ICMSCOFINScalc //declaração fora da função pq ta dando erro
 function ICMSCOFINS(COFINScalc,ICMScalc, fornecimento){ //erro ta nessa function
-    let ICMSCOFINScalc = COFINScalc * ICMScalc * fornecimento;
+    let ICMSCOFINScalc = (COFINScalc * ICMScalc * fornecimento);
 
-    console.log(ICMSCOFINScalc); //aqui da 25???????????
+    console.log(ICMSCOFINScalc); //aqui da 25???????????|| tava sendo burro
     ICMSPIS(PIScalc,ICMScalc, fornecimento)
 }
 
@@ -70,7 +70,11 @@ function ICMSPIS(PIScalc,ICMScalc, fornecimento){
     faturaaa(fornecimento, ICMScalc, COFINScalc ,PIScalc, ICMSCOFINScalc, ICMSPIScalc) //error informa aqui
 }
 
+
 function faturaaa(fornecimento, ICMScalc, COFINScalc,PIScalc, ICMSCOFINScalc, ICMSPIScalc){
-    let FATURAcalca = fornecimento + ICMScalc + COFINScalc + PIScalc + ICMSCOFINScalc + ICMSPIScalc;
+    //let FATURAcalca = (fornecimento + ICMScalc + COFINScalc + PIScalc + ICMSCOFINScalc + ICMSPIScalc);
+    let FATURAcalca = fornecimento + ICMScalc + COFINScalc + PIScalc + ICMSPIScalc  + (COFINScalc*ICMScalc*fornecimento)
+
     console.log(FATURAcalca);
+    
 }
