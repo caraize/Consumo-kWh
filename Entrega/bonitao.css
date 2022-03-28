@@ -1,0 +1,19 @@
+#churrasquin{
+    text-align:justify;
+    border: 1px solid #5f5555;
+    border-radius: 2px;
+    padding: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-family: sans-serif;
+}
+#titulo{
+    margin-left: 27em;
+}
+
+
+#botao{
+    text-align:justify;
+    margin-left: 18em;
+
+}
