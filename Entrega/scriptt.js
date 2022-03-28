@@ -50,13 +50,14 @@ function calculaPIS(COFINScalc, fornecimento){
         PIScalc = COFINScalc * 0.0158651
     }
         
-    console.log(PIScalc)
+    console.log(PIScalc);
     ICMSCOFINS(COFINScalc,ICMScalc, fornecimento)
             
     }
 
+    let ICMSCOFINScalc //declaração fora da função pq ta dando erro
 function ICMSCOFINS(COFINScalc,ICMScalc, fornecimento){ //erro ta nessa function
-    let ICMSCOFINScalc = (COFINScalc * ICMScalc * fornecimento);
+    let ICMSCOFINScalc = COFINScalc * ICMScalc * fornecimento;
 
     console.log(ICMSCOFINScalc); //aqui da 25???????????
     ICMSPIS(PIScalc,ICMScalc, fornecimento)
@@ -64,12 +65,12 @@ function ICMSCOFINS(COFINScalc,ICMScalc, fornecimento){ //erro ta nessa function
 
 function ICMSPIS(PIScalc,ICMScalc, fornecimento){
     let ICMSPIScalc = PIScalc * ICMScalc * fornecimento;
+    
     console.log(ICMSPIScalc);
-
     faturaaa(fornecimento, ICMScalc, COFINScalc ,PIScalc, ICMSCOFINScalc, ICMSPIScalc) //error informa aqui
 }
 
 function faturaaa(fornecimento, ICMScalc, COFINScalc,PIScalc, ICMSCOFINScalc, ICMSPIScalc){
     let FATURAcalca = fornecimento + ICMScalc + COFINScalc + PIScalc + ICMSCOFINScalc + ICMSPIScalc;
-    console.log(FATURAcalc);
+    console.log(FATURAcalca);
 }
