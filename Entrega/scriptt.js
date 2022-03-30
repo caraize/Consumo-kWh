@@ -10,6 +10,7 @@ function calculaForn(campoConsumo){
     console.log(fornecimento);
 
     calculaICMS(fornecimento)
+    document.getElementById("1").innerHTML = `${fornecimento }`
 }
 
 function calculaICMS(fornecimento){ //if fornecimento < 200 = * 0.136363 | else * 333333
@@ -76,5 +77,16 @@ function faturaaa(fornecimento, ICMScalc, COFINScalc,PIScalc, ICMSCOFINScalc, IC
     let FATURAcalca = fornecimento + ICMScalc + COFINScalc + PIScalc + ICMSPIScalc  + (COFINScalc*ICMScalc*fornecimento)
 
     console.log(FATURAcalca);
-    
+    retornarDados(fornecimento, ICMScalc, COFINScalc,PIScalc, ICMSPIScalc)
+}
+
+
+function retornarDados(fornecimento ,ICMScalc, COFINScalc,PIScalc, ICMSPIScalc, FATURAcalca){
+    document.getElementById("2").innerHTML = `${ICMScalc}`
+    document.getElementById("3").innerHTML = `${COFINScalc}`
+    document.getElementById("4").innerHTML = `${PIScalc}`
+    document.getElementById("5").innerHTML = `${COFINScalc*ICMScalc*fornecimento}`
+    document.getElementById("6").innerHTML = `${ICMSPIScalc}`
+    document.getElementById("7").innerHTML = `${fornecimento + ICMScalc + COFINScalc + PIScalc + ICMSPIScalc  + (COFINScalc*ICMScalc*fornecimento)}`    
+
 }
